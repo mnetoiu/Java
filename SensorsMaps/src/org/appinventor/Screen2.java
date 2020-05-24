@@ -1,0 +1,78 @@
+package org.appinventor;
+import com.google.appinventor.components.runtime.HandlesEventDispatching;
+import com.google.appinventor.components.runtime.EventDispatcher;
+import com.google.appinventor.components.runtime.Form;
+import com.google.appinventor.components.runtime.Component;
+import com.google.appinventor.components.runtime.ListPicker;
+import com.google.appinventor.components.runtime.Button;
+import com.google.appinventor.components.runtime.Label;
+import com.google.appinventor.components.runtime.Clock;
+import com.google.appinventor.components.runtime.BluetoothClient;
+class Screen2 extends Form implements HandlesEventDispatching {
+  private ListPicker ListPicker1;
+  private Button Button1;
+  private Label Label1;
+  private Label Label2;
+  private Label temp_label;
+  private Label temp;
+  private Label humi_label;
+  private Label humi;
+  private Label light_lvl_label;
+  private Label light;
+  private Label CO_label;
+  private Label co;
+  private Button Home;
+  private Clock Clock1;
+  private BluetoothClient BluetoothClient1;
+  protected void $define() {
+    this.AlignHorizontal(3);
+    this.AlignVertical(2);
+    this.AppName("SensorsMaps");
+    this.Title("Screen2");
+    ListPicker1 = new ListPicker(this);
+    ListPicker1.Width(-1050);
+    ListPicker1.Text("Choose Bluetooth");
+    Button1 = new Button(this);
+    Button1.Width(-1050);
+    Button1.Text("Disconnect");
+    Button1.Visible(false);
+    Label1 = new Label(this);
+    Label1.Text("Status: Disconnected!");
+    Label2 = new Label(this);
+    Label2.FontBold(true);
+    Label2.Text("Sensor values:");
+    Label2.Visible(false);
+    temp_label = new Label(this);
+    temp_label.Text("Temperature");
+    temp_label.Visible(false);
+    temp = new Label(this);
+    temp.Text("0");
+    temp.Visible(false);
+    humi_label = new Label(this);
+    humi_label.Text("Humidity");
+    humi_label.Visible(false);
+    humi = new Label(this);
+    humi.Text("0");
+    humi.Visible(false);
+    light_lvl_label = new Label(this);
+    light_lvl_label.Text("Light Level");
+    light_lvl_label.Visible(false);
+    light = new Label(this);
+    light.Text("0");
+    light.Visible(false);
+    CO_label = new Label(this);
+    CO_label.Text("CO sensor value");
+    CO_label.Visible(false);
+    co = new Label(this);
+    co.Text("0");
+    co.Visible(false);
+    Home = new Button(this);
+    Home.Width(-1050);
+    Home.Text("Home");
+    Clock1 = new Clock(this);
+    BluetoothClient1 = new BluetoothClient(this);
+  }
+  public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
+    return false;
+  }
+}
